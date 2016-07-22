@@ -1,4 +1,5 @@
 require 'mkmf'
+extension_name = 'zoom'
 
 unless system('yaz-config')
   $stderr.puts 'yaz does not appear to be installed'
