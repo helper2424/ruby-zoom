@@ -16,8 +16,12 @@ sudo make install
 
 ```
 
-After this need build gem `ruby-zoom`:
-
+After this need build gem `ruby-zoom`. You can setup additional config for bundler:
+```
+bundle config build.zoom --with-opt-include=/usr/local/include
+```
+With this option `bundle install` inside gem directory will correctly build gem `zoom`. 
+Also you can build gem by hands:
 ```
 cd ~/temp_zoom
 rm -r ~/temp_zoom
