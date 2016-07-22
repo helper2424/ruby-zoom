@@ -1,3 +1,42 @@
+Install
+=======
+Firstly install yaz library. Need build it from source. Here http://www.indexdata.com/yaz/doc/installation.unix.html#installation.source.unix
+you can see detailed instruction. Or you can use this commands:
+
+```
+cd ~
+mkdir temp_zoom
+cd temp_zoom
+git clone https://github.com/indexdata/yaz.git
+cd yaz
+./buildconf.sh
+./configure
+make
+sudo make install
+
+```
+
+After this need build gem `ruby-zoom`:
+
+```
+cd ~/temp_zoom
+rm -r ~/temp_zoom
+git clone https://github.com/helper2424/ruby-zoom.git
+cd ruby-zoom/ext
+ruby extconf.rb --with-opt-include=/usr/local/include
+make
+sudo make install
+rake test
+```
+
+So, now you have installed `ruby-zoom` library. Check, that it's installed correctly:
+```
+irb
+require 'zoom'
+```
+
+If you will see `true`, then everything is ok.
+
 Ruby/ZOOM
 =========
 
